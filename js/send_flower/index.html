@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>talk in js-代理模式</title>
+</head>
+<body>
+    <script>
+        const xsj={
+            name: '徐士杰',
+            age: 22,
+            yz: 36,
+            single: true,
+            hometown: '绍兴',
+            room: 1319,
+            sendFlower: function(target){         
+                target.receiveFlower(xsj); 
+            }
+        };
+        const meimei = {
+            name: '梅梅',
+            age: 17,
+            mood: 50,
+            receiveFlower: function(sender){
+             
+                console.log('收到了花');
+            },
+            listenGoodMood: function() {
+                
+                setTimeout(function(){
+                    if(meimei.mood > 85)
+                    meimei.receiveFlower();
+                    else
+                    {
+                        console.log('拒绝');
+                    }
+                    
+                },3000);
+            }
+        }       
+        const huahua = {
+            name: '花花',
+            
+            receiveFlower:function(sender){
+                //心情好，再送
+                //meimei.receiveFlower(sender);
+                // 代理者，监听下梅梅的心情
+                meimei.listenGoodMood(function(){                  
+                })
+            }
+        }
+    </Script>
+</body>
+</html>
