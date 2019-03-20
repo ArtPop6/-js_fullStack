@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html,body {
+    width: 100%;
+    /* 特殊情况不设高度，（一整屏看完的设） */
+    height: 100%;
+    font-size: 20px;
+}
+ul li {
+    list-style: none;
+}
+.page {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+.page-header {
+    width: 100%;
+
+}
+.page-header__pic {
+    width: 100%;
+    height: 200px;
+    background: url(./pic.png) no-repeat;
+    background-size: cover;
+}
+.page-headr__userinfo {
+    position: relative;
+    padding: 10px 10px 13px 10px;
+}
+.name{
+    line-height: 1;
+}
+.labels {
+    margin-top: 10px;
+
+}
+.label {
+    padding: 5px 10px;
+    color:#fff;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.blue {
+    background-color: #48A6FD;
+}
+.green {
+    background-color: #1DCA42;
+}
+.orange {
+    background-color: #FB8800;
+}
+.page-header__msg {
+    margin-top: 10px;
+}
+.items {
+
+}
+.item {
+    position: relative;
+    width: 95px;
+    display: inline-block;
+    padding-left: 35px;
+}
+.city::before {
+    content :'';
+    width: 22px;
+    height: 25px;
+    background: url(./location.png) no-repeat;
+    /* background: #000; */
+    background-size: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.ewm {
+    width: 34px;
+    height: 33px;
+    position: absolute;
+    top: 32px;
+    right: 11px;
+}
+.ewm img {
+    /* block独自占一行，块级元素。设置成block才能设置宽高 */
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.envelope {
+    position: absolute;
+    width: 55px;
+    height: 50px;
+    right: 4px;
+    bottom: 0;
+}
+.envelope img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
