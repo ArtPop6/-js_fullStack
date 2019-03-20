@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* ul li {
+            list-style: none;
+        }
+        .item {
+            font-size: 20px;
+            width: 60px;
+            height: 50px;
+            text-align: center;
+            /* 文档流排下去，飘起来脱离文档流，在文档流没地位了，不占高度，想扔哪就哪，ul为height:0 */
+            /* float: right;
+        }
+        .blue {
+            background-color: rgb(118, 118, 233);
+        }
+        .red {
+            background-color: rgb(250, 232, 71);
+        }
+        .green {
+            background-color: rgb(85, 212, 85);
+        }
+        .pink {
+            background-color: pink;
+        } */ 
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            width: 100%;
+            text-align: center;
+            background-color: #aaa;
+        }
+        .text {
+            text-align: center;
+            line-height: 200px;
+            font-size: 40px;
+        }
+        .content {
+            /* width: 100%; 往外挤 */
+            padding: 0 200px;
+            /* 清除浮动五种方法 */
+            /* overflow: scroll; */
+            /* auto hidden flow */
+
+        }
+        .content::after {
+            content:'......';
+            display: block;
+            clear: both;
+            height: 0;
+            visibility: hidden;
+        }
+        .main {
+            float: left;
+            /* 父容器100p */
+            width: 100%;
+            height: 200px;
+            background-color: #ddd;
+        }
+        .left {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: relative;
+            left: -200px;
+            margin-left: -100%;
+            /* 往左移200 */
+        }
+        .right {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: rgb(86, 159, 226);
+            /* margin-left: 0; */
+            margin-left: -200px;
+            position: relative;
+            /* 相对于本身定位。ab相对于re定位 */
+            left: 200px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="page">
+        <ul class="items">
+            <li class="item blue">1</li>
+            <li class="item red">2</li>
+            <li class="item green">3</li>
+            <li class="item pink">4</li>
+        </ul>
+    </div> -->
+    <header>圣杯布局</header>
+    <div class="content clearfix">
+            <div class="main text">main</div>
+            <div class="left text">left</div>
+            <!-- 最重要 -->
+            
+            <div class="right text">right</div>
+            <!-- 弥补塌陷 -->
+            <!-- <div style="clear: both"></div> -->
+    </div>
+    <footer>footer</footer>
+    
+</body>
+</html>
