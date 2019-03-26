@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    // 为人民服务的？ 为实例
+    // 另外的方式运行 this指向谁？
+       function Otaku(name,age) {
+           this.name=name;
+           this.age=age;
+       }
+       var obj = new Object();
+    //    为obj服务 手动实现new过程
+       Otaku.call(obj,"喻晗",18);
+    //    new Otaku()?
+
+   </script> 
+</body>
+</html>
