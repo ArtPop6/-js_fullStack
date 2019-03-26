@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 950px;
+            margin: 0 auto;
+            /* 就算有间隙为0，不过要重新设置文字大小 */
+            font-size: 0;
+        }
+        .col-4,.col-8 {
+            height: 200px;
+            /* 行内元素有内容撑起来才有宽高 inline block就会有小间隙（标签之间换行符生成）*/
+            display: inline-block;
+            font-size: 16px;
+
+        }
+        .col-8 {
+            width: 60%;           
+            background-color: green;
+        }
+        .col-4 {
+            width: 40%;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        
+        <div class="col-8">2342414</div>
+        <div class="col-4">3256463</div>
+        
+    </div>
+</body>
+</html>
