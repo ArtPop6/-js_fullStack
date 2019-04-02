@@ -1,0 +1,10 @@
+@import "../../base/fn"
+
+.weui-btn_primary
+    background-color $weuiBtnPrimaryBg
+    &:not(.weui-btn_disabled):visited
+        color $weuiBtnFontColor
+    // 不能有da类名，且还被激活了，
+    &:not(.weui-btn_disabled):active
+        color $weuiBtnActiveFontColor
+        background-color $weuiBtnPrimaryActiveBg
