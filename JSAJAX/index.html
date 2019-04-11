@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var xhr = null
+        // 能让浏览器发送数据请求的方法
+        if (window.XMLHttpRequest) {
+            xhr = new XMLHttpRequest()
+        } else {
+            xhr = new ActiveXObject("Microsoft.XMLHTTP")
+        }
+        // 请求方式 哪里请求 当前请求同步(干等 一心一意)还是异步(true看文件+等)
+        // 第五行获取数据方法666 十行console123 先打印123。 代码默认异步
+        xhr.open('get', './mock.json', true)
+        xhr.setRequestHeader("Content-type", "appliction/x-www-form-urlencode")
+        xhr.send()
+        // 200请求成功 拿到数据    500服务器问题
+        // send方法完成了 执行send方法1 去办公室2， 进办公室酝酿说话state是3  成功表述解析完成4 
+        // console.log(xhr.responseText)
+        // console.log(xhr.readyState, xhr.status)
+        // 异步一定要回调函数
+        var p = new Promise((resolve, reject)=> {
+            xhr.onreadystatechange = function () {
+            // 接口成功
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                console.log(xhr.responseText);
+                // console.log(123546);
+                resolve(xhr.responseText)
+            }
+        }
+        })
+
+        // 请求一定耗时，一定比consolelog耗时久，就产生异步,js不会等待，往下执行。
+        // console.log(123546);
+        function xq() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                console.log("猛哥要相亲了");
+                resolve('相亲很顺利')
+                }, 1000) 
+            })
+                      
+        }
+        // xq()
+        // p 
+        //     .then((e) => {
+        //         console.log(e)
+        //     })
+        // 变成同步关系
+        function marry() {
+            setTimeout(() => {
+                console.log('猛哥结婚了！')
+            },500)
+            // console.log('猛哥结婚了！')
+        }
+        p
+            .then(xq)
+            .then((e) => {
+                console.log(e)
+            })
+            .catch(() => {
+                console.log('猛哥出家了')
+            })
+    </script>
+</body>
+</html>
