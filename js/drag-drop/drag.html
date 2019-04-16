@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box {
+        width: 200px;
+        height: 200px;
+        border: 5px solid grey;
+    }
+    #box2 {
+        margin-top: 30px;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    </style>
+</head>
+<body>
+    <div class="box" id=" box1" draggable="true">
+        <p>辣条</p>
+    </div>
+    <div class="box" id="box2" draggable="true">
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555425018678&di=a3463850853bb439bd93a794750600e8&imgtype=0&src=http%3A%2F%2Fimg.ph.126.net%2FTU2OgiplUZwotryHxwUYnw%3D%3D%2F3110861442623032399.jpg" alt="">
+    </div>
+    <script>
+        // dragstart drag dragend 源对象上 拖动的那个对象
+        // 目标对象 放的那个对象 dragenter  dragover dragleave drop
+        // dragenter 源对象进入目标对象 只触发一次
+        // dragover  源对象进入目标对象       n
+        // dragleave 源对象离开目标对象
+        // drop 放上去
+        const box1 = document.getElementById('box1');
+        const box2 = document.getElementById('box2');
+        const boxs = document.querySelectorAll('.box');
+        let srcDiv = null;
+        for(let i = 0, length = boxs.length; i<length; i ++) {
+            let box = boxs[i];
+            box.addEventListener('dragstart', function(event){
+                srcDiv = this;
+                // 源对象（鼠标点的） 目标对象（拖得）
+                // text/html 内容类型
+                event.dataTransfer.setData('text/html', this.innerHTML);
+                // a = 1 b = 2
+            })
+            box.addEventListener('drag', function() {
+                console.log('drag');
+            })
+            box.addEventListener('dragend', function() {
+                console.log('dragend');
+            })
+            // 目标对象
+            box.addEventListener('dragover', function(event) {
+                console.log('dragover')
+                event.preventDefault();
+            })
+            box.addEventListener('dragenter', function() {
+                console.log('dragenter');
+            })
+            box.addEventListener('dragleave', function() {
+                console.log('dragleave');
+            })
+            box.addEventListener('drop', function(event) {
+                console.log('drop');
+                // src latiao
+                srcDiv.innerHTML = this.innerHTML;
+                this.innerHTML = event.dataTransfer.getData('text/html');
+            })
+        }
+        // box1.addEventListener('dragstart', function(event) {
+            // event.dat
+        // })
+        // box2.addEventListener('dragover', function(event) {
+        //     event.preventDefault();
+        // });
+        // box2.addEventListener('drop', function() {
+        //     this.innerHTML = box1.innerHTML;
+
+        // })
+    </script>
+</body>
+</html>
