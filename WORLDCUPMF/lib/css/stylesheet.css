@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+ul,ol {
+    list-style: none;
+}
+body {
+    /* 继承手机默认字体大小 */
+    font-size: 100%;
+    /* 微软雅黑 没有第一个字体用第二个。。。*/
+    font-family: Arial, Helvetica, sans-serif, Fallback;
+    /* 前加上前缀即对不同浏览器的兼容 */
+    -webkit-tab-hightlight-color: rgba(0,0,0,0);
+    -ms-tab-hightlight-color: rgba(0,0,0,0);
+    tab-hightlight-color: rgba(0,0,0,0);
+}
+html,body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    /* 设置H5背面的可见性 */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+img {
+    display: inline-block;
+}
+.f12 {
+    font-size: 12px;
+}
+.fr {
+    float: right;
+}
+.fl {
+    float: left;
+}
+/* 清除浮动 */
+.cf::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.perspective {
+    height: 100%;
+    /* 左右居中 */
+    margin: 0 auto; 
+}
+.load {
+    /* 隐藏 */
+    display: none;
+    /* 往上找，relative */
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: #43812b;
+    /* z轴层级 离我们眼睛远近，正值更近 */
+    z-index: 1000;
+}
+.loadImg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* 使其处在屏幕正中间 */
+    margin: -50px 0 0 -50px;
+    /* 元素有自己的宽高，所以在屏幕中间偏下偏右 用transform: translateY沿Y轴平移自身的一半 margin 一样的效果*/
+    width: 100px;
+    height: 100px;
+}
+.loadTxt {
+    width: 100px;
+    height: 50px;
+    margin: 0 auto;
+    /* 让文字在盒子里放到垂直方向正中间 */
+    line-height: 50px;
+    text-align: center;
+    color: #fff86b;
+    font-size: 25px;
+    font-family: Impact,Georgia, 'Times New Roman', Times, serif;
+}
+.circle {
+    background-color: rgba(0,0,0,0);
+    border: 5px solid rgba(251,241,107,0.9);
+    opacity: .9;
+    border-right-color: rgba(0,0,0,0);
+    border-left-color: rgba(0,0,0,0);
+    /* 阴影xyz轴及颜色 */
+    /* 做兼容 */
+    -webkit-box-shadow: 0 0 30px #fbf49a;
+    -ms-box-shadow: 0 0 30px #fbf49a;
+    box-shadow: 0 0 30px #fbf49a;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* 左右居中 */
+    margin: 0 auto;
+    animation: spinPulse 1s infinite linear;
+}
+/* 定义一个动画，动画名叫做spinPulse */
+@keyframes spinPulse {
+    0% {
+        transform: rotate(160deg);
+        opacity: 0;
+        box-shadow: 0 0 1px #2187e7;
+    }
+    50% {
+        transform: rotate(145deg);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(-320deg);
+        opacity: 0;
+    }
+
+}
+.circle1 {
+    background-color: rgba(0,0,0,0);
+    border: 5px solid rgba(251,241,107,1);
+    opacity: .9;
+    border-right-color: rgba(0,0,0,0);
+    border-left-color: rgba(0,0,0,0);
+    /* 阴影xyz轴及颜色 */
+    /* 做兼容 */
+    -webkit-box-shadow: 0 0 15px #fbf49a;
+    -ms-box-shadow: 0 0 15px #fbf49a;
+    box-shadow: 0 0 15px #fbf49a;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    /* 左右居中 */
+    margin: 0 auto;
+    position: relative;
+    top: -50px;
+    animation: spinoffPulse 1s infinite linear;
+}
+@keyframes spinoffPulse {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* 首页样式 */
+.global {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    /* 动画风格 */
+    transform-style: preserve-3d;
+}
+/* 动画风格 */
+.screen {
+    transform-style: preserve-3d;
+}
+/* 动画效果 */
+.ease {
+    transition: all 1s ease-in-out;
+}
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+.layer {
+    position: relative;
+    overflow: hidden;
+}
+.global,.screen,.layer {
+    z-index: 1;
+}
+.layer1
+
