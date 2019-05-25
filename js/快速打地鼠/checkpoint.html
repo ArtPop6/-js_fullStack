@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>快速打地鼠关卡选择</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/checkpoint.css">
+</head>
+<body>
+<audio class="audio">
+    <source src="audio/click1.mp3" type="audio/mpeg"/>
+</audio>
+<audio class="audio" autoplay="autoplay" loop="loop">
+    <source src="audio/game_music.ogg" type="audio/ogg"/>
+</audio>
+<div class="main">
+    <div class="return">
+        <img src="img/return.png" height="44" width="100"/></div>
+</div>
+<script>
+
+    for (var i = 0; i < 27; i++) {
+        var ele = document.createElement("div");//创建元素
+        ele.setAttribute("class", "a");
+        document.getElementsByClassName("main")[0].appendChild(ele);//创建图像并将其附加到页面
+        document.getElementsByClassName("a")[i].innerHTML = "<div class=\"b\" onclick='cpp("+i+")'><span class='c'></span><span class='d'></span><span class='e'></span>";
+    }
+    for (var i = 0; i < 27; i++) {
+        document.getElementsByClassName("a")[i].style.background = "#ccc url('img/lock.png') no-repeat";
+        document.getElementsByClassName("a")[i].style.backgroundPosition = "center center";
+    }
+    document.getElementsByClassName("return")[0].onclick = function () {
+        document.getElementsByClassName("audio")[0].play();
+        setTimeout(function () {
+            window.open("main.html", "_parent");
+        }, 500);
+    };
+    document.getElementsByClassName("b")[0].style.display="block";
+    function cpp(i) {
+        document.getElementsByClassName("audio")[0].play();
+        setTimeout(function () {
+                        window.open(i+ ".html", "_parent");
+                    }, 500);
+    }
+    var val;
+    var strCookie = document.cookie;//获取cookie
+    console.log(strCookie);
+    var arrCookie = strCookie.split(";");//把cookie分成数组
+   console.log(arrCookie);
+   for(var i=0;i<arrCookie.length;i++){
+       val=arrCookie[i].split("=");
+       document.getElementsByClassName("b")[parseInt(val[0])+1].style.display="block";
+       document.getElementsByClassName("e")[parseInt(val[0])].style.display="block";
+       document.getElementsByClassName("e")[parseInt(val[0])].innerHTML=val[1];
+   }
+   console.log(val);
+
+</script>
+</body>
+</html>

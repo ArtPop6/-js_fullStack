@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js"></script>
+    <script src="js/index21.js"></script>
+    <style>
+        .table tr td:nth-child(1) {
+            left: 600px;
+            top: 130px;
+        }
+
+        .table tr td:nth-child(2) {
+            left: 200px;
+            top: 100px;
+        }
+
+        .table tr td:nth-child(3) {
+            left: 750px;
+            top: 50px;
+        }
+
+        .table tr td:nth-child(4) {
+            left: 300px;
+            top: 200px;
+        }
+
+        .table tr td:nth-child(5) {
+            left: 450px;
+            top: 300px;
+        }
+
+        .table tr td:nth-child(6) {
+            left: 450px;
+            top: 75px;
+        }
+        .table tr td:nth-child(7) {
+            left: 650px;
+            top: 300px;
+        }
+        .table tr td:nth-child(8) {
+            left: 750px;
+            top: 200px;
+        }
+        .table tr td:nth-child(9) {
+            left: 750px;
+            top: 400px;
+        }
+        .table tr td:nth-child(10) {
+            left: 550px;
+            top: 400px;
+        }
+        .table tr td:nth-child(11) {
+            left: 350px;
+            top: 450px;
+        }
+        .table tr td:nth-child(12) {
+            left: 100px;
+            top: 425px;
+        }
+        .table tr td:nth-child(13) {
+            left: 70px;
+            top: 325px;
+        }
+        .table tr td:nth-child(14) {
+            left: 235px;
+            top: 325px;
+        }
+    </style>
+</head>
+<body>
+<audio class="audio">
+    <source src="audio/hit.mp3" type="audio/mpeg"/>
+</audio>
+<audio class="audio">
+    <source src="audio/game_pass.ogg" type="audio/ogg"/>
+</audio>
+<audio class="audio">
+    <source src="audio/over_music.ogg" type="audio/ogg"/>
+</audio>
+<audio class="audio" autoplay="autoplay" loop="loop">
+    <source src="audio/game_music.ogg" type="audio/ogg"/>
+</audio>
+<audio class="audio">
+    <source src="audio/focus.mp3" type="audio/mpeg"/>
+</audio>
+<div class="top">
+    <div class="time">倒计时：<span id="djs">130</span>秒</div>
+    <div class="score">得分：<span id="defen">0</span>/6000</div>
+</div>
+<!--游戏区域-->
+
+<div id="game_div">
+
+    <div id="zt_div"></div>
+    <table class="table">
+        <tr>
+            <td><img src="img/burrow.png" onclick="play(this)"/></td>
+            <td><img src="img/burrow.png" onclick="play(this)"/></td>
+            <td><img src="img/burrow.png" onclick="play(this)"/></td>
+            <td><img src="img/burrow.png" onclick="play(this)"/></td>
+            <td><img src="img/burrow.png" onclick="play(this)"/></td>
+            <td><img src="img/burrow.png" onclick="play(this)"/></td>
+            <td><img src="img/burrow.png" onclick="play(this)"/></td>
+            <td><img src="img/burrow.png" onclick="play(this)"/></td>
+            <td><img src="img/burrow.png" onclick="play(this)"/></td>
+            <td><img src="img/burrow.png" onclick="play(this)"/></td>
+            <td><img src="img/burrow.png" onclick="play(this)"/></td>
+            <td><img src="img/burrow.png" onclick="play(this)"/></td>
+            <td><img src="img/burrow.png" onclick="play(this)"/></td>
+            <td><img src="img/burrow.png" onclick="play(this)"/></td>
+        </tr>
+    </table>
+    <div class="star" id="ksBtn">开始游戏</div>
+    <div class="restar">重新开始</div>
+    <div class="zanting" id="ztBtn">暂停游戏</div>
+    <div class="return">返回主菜单</div>
+    <div class="hammer"></div>
+    <div class="success">
+        <div class="top"></div>
+        <div class="return"></div>
+        <div class="restar"></div>
+        <div class="next"></div>
+        <div class="score"></div>
+        <div class="fenshu">000</div>
+    </div>
+    <div class="failure">
+        <div class="top"></div>
+        <div class="return"></div>
+        <div class="restar"></div>
+        <div class="score"></div>
+        <div class="fenshu">000</div>
+    </div>
+</div>
+<span id="str"></span>
+
+</body>
+</html>

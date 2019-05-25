@@ -1,0 +1,448 @@
+
+body {
+    background: url(../img/background/5.jpg) no-repeat;
+    background-size: 100%;
+    background-position: center center;
+}
+.top{
+    position: relative;
+    margin:150px auto -108px;
+    width: 1280px;
+    height: 80px;
+}
+.top .time {
+    background-color: #d9b07a;
+    font-size: 35px;
+    text-align: center;
+    position: absolute;
+    line-height: 70px;
+    font-weight: bolder;
+    font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif;
+    left: 100px;
+    width: 300px;
+    height: 70px;
+    margin: 0 auto -102px;
+    border: 2px solid #badd89;
+    border-radius: 50px 50px 0px 0px;
+    user-select: none;
+    color: #9C27B0;
+    text-shadow: 2px 2px 3px #009688;
+    box-shadow: 5px 4px 2px 1px #0e0e0e96 inset;
+}
+.top .score {
+    background-color: #d9b07a;
+    font-size: 30px;
+    text-align: center;
+    position: absolute;
+    line-height: 70px;
+    font-weight: bolder;
+    font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif;
+    right: 100px;
+    width: 300px;
+    height: 70px;
+    margin: 0 auto -102px;
+    border: 2px solid #badd89;
+    border-radius: 50px 50px 0px 0px;
+    user-select: none;
+    color: #0df5b6;
+    text-shadow: 3px 3px 3px #FF9800;
+    box-shadow: 5px 4px 2px 1px #0e0e0e96 inset;
+}
+.table tr {
+
+}
+
+.table tr td {
+    display: inline-table;
+    position: absolute;
+    width: 110px;
+    height: 63px;
+    background: url("../img/burrow.png") no-repeat;
+    user-select: none;
+}
+
+
+#game_div {
+    position: relative;
+    width: 1280px;
+    height: 600px;
+    margin: 100px auto 0;
+    overflow: hidden;
+    border: 3px solid #badd89;
+    border-radius: 60px;
+    cursor: url("../img/frontSight.png"), auto;
+    box-shadow: 5px 4px 2px 1px #0e0e0e96 inset;
+    background-color: #7ba511;
+}
+
+
+#game_div>.star {
+    position: absolute;
+    right: 50px;
+    top: 200px;
+    width: 130px;
+    height: 40px;
+    border: 1px solid #6a3303;
+    line-height: 40px;
+    font-size: 25px;
+    font-weight: bolder;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #9E9E9E;
+    user-select: none;
+    color: #673AB7;
+    font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif;
+    text-shadow: 1px 2px 1px black;
+    box-shadow: 3px 3px 3px #051900;
+    transition: 0.1s ease-in-out;
+}
+#game_div>.star:hover{
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+#game_div>.restar {
+    position: absolute;
+    right: 50px;
+    top: 200px;
+    width: 130px;
+    height: 40px;
+    border: 1px solid #6a3303;
+    line-height: 40px;
+    font-size: 25px;
+    font-weight: bolder;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #607D8B;
+    color: #CDDC39;
+    display: none;
+    user-select: none;
+    font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif;
+    text-shadow: 2px 2px 1px black;
+    box-shadow: 3px 3px 3px #051900;
+    transition: 0.1s ease-in-out;
+}
+#game_div>.restar:hover{
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+
+#game_div>.zanting {
+    position: absolute;
+    right: 50px;
+    top: 300px;
+    width: 130px;
+    height: 40px;
+    border: 1px solid #6a3303;
+    line-height: 40px;
+    font-size: 25px;
+    font-weight: bolder;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #93a92b;
+    user-select: none;
+    color: #F44336;
+    font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif;
+    text-shadow: 2px 2px 2px black;
+    box-shadow: 3px 3px 3px #051900;
+    transition: 0.1s ease-in-out;
+    display: none;
+}
+#game_div>.zanting:hover{
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+
+#game_div>.return {
+    position: absolute;
+    right: 50px;
+    top: 400px;
+    width: 130px;
+    height: 40px;
+    border: 1px solid #6a3303;
+    line-height: 40px;
+    font-size: 25px;
+    font-weight: bolder;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #3d7200;
+    user-select: none;
+    color: #FFC107;
+    font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif;
+    text-shadow: 2px 2px 2px black;
+    box-shadow: 3px 3px 3px #051900;
+    transition: 0.1s ease-in-out;
+}
+#game_div>.return:hover{
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+
+.success {
+    border-radius: 60px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #cccccc;
+    cursor: url("../img/frontSight.png"), auto;
+    display: none;
+    background: url(../img/background/3.jpg) no-repeat;
+}
+#game_div .success .fenshu{
+    position: absolute;
+    left: 515px;
+    top: 290px;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 45px;
+    font-weight: bold;
+    color: #5b0a01;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 3px #8e0f0bb3;
+    font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif;
+}
+#game_div .failure .fenshu{
+    position: absolute;
+    left: 515px;
+    top: 290px;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 45px;
+    font-weight: bold;
+    color: #5b0a01;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 3px #8e0f0bb3;
+    font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif;
+}
+
+.failure {
+    border-radius: 60px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #cccccc;
+    cursor: url("../img/frontSight.png"), auto;
+    display: none;
+    background: url(../img/background/4.jpg) no-repeat;
+}
+
+.failure .top {
+    width: 300px;
+    height: 116px;
+    background: url(../img/defeat.png);
+    background-size: 300px 116px;
+    margin: 100px auto;
+}
+
+.failure .restar {
+    position: absolute;
+    left: 700px;
+    top: 385px;
+    width: 92px;
+    height: 97px;
+    background: url(../img/restart.png);
+    -webkit-transition: 0.1s ease-in-out;
+    -moz-transition: 0.1s ease-in-out;
+    -ms-transition: 0.1s ease-in-out;
+    -o-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+}
+.failure .restar:hover{
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+
+.failure .return {
+    position: absolute;
+    left: 210px;
+    top: 400px;
+    width: 195px;
+    height: 58px;
+    background: url(../img/icon.png);
+    background-position: -23px 85px;
+    -webkit-transition: 0.1s ease-in-out;
+    -moz-transition: 0.1s ease-in-out;
+    -ms-transition: 0.1s ease-in-out;
+    -o-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+}
+.failure .return:hover{
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.failure .score {
+    position: absolute;
+    left: 350px;
+    top: 280px;
+    width: 155px;
+    height: 60px;
+    background: url(../img/icon.png);
+    background-position: -1045px 1680px;
+    background-size: 1000px 2000px;
+}
+
+.success .top {
+    margin: 100px auto;
+    width: 420px;
+    height: 100px;
+    background: url(../img/icon.png);
+    background-position: -50px 1020px;
+    background-size: 1000px 2000px;
+    animation: stop 1s ease-in-out infinite alternate;
+}
+@keyframes stop {
+    0%{
+        -webkit-transform: rotate(10deg);
+        -moz-transform: rotate(10deg);
+        -ms-transform: rotate(10deg);
+        -o-transform: rotate(10deg);
+        transform: rotate(10deg);
+    }
+    50%{
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(-10deg);
+        -moz-transform: rotate(-10deg);
+        -ms-transform: rotate(-10deg);
+        -o-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+    }
+}
+
+.success .return {
+    position: absolute;
+    left: 160px;
+    top: 410px;
+    width: 200px;
+    height: 60px;
+    background: url(../img/icon.png);
+    background-position: -228px 83px;
+    -webkit-transition: 0.1s ease-in-out;
+    -moz-transition: 0.1s ease-in-out;
+    -ms-transition: 0.1s ease-in-out;
+    -o-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+}
+.success .return:hover{
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.success .restar {
+    position: absolute;
+    left: 435px;
+    top: 405px;
+    width: 176px;
+    height: 60px;
+    background: url(../img/icon.png);
+    background-position: -194px 232px;
+    -webkit-transition: 0.1s ease-in-out;
+    -moz-transition: 0.1s ease-in-out;
+    -ms-transition: 0.1s ease-in-out;
+    -o-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+}
+.success .restar:hover{
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.success .next {
+    position: absolute;
+    left: 670px;
+    top: 410px;
+    width: 190px;
+    height: 65px;
+    background: url(../img/next.png);
+    -webkit-transition: 0.1s ease-in-out;
+    -moz-transition: 0.1s ease-in-out;
+    -ms-transition: 0.1s ease-in-out;
+    -o-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+}
+.success .next:hover{
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.success .score {
+    position: absolute;
+    left: 350px;
+    top: 280px;
+    width: 155px;
+    height: 60px;
+    background: url(../img/icon.png);
+    background-position: -1045px 1680px;
+    background-size: 1000px 2000px;
+}
+
+#zt_div {
+    position: absolute;
+    width: 1030px;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    opacity: 0.6;
+    display: none;
+}
+
+.hammer {
+    position: absolute;
+    width: 70px;
+    height: 55px;
+    background: url("../img/hammer.png") no-repeat;
+    background-size: 70px 55px;
+    -webkit-animation: hammer 0.2s ease-in-out infinite;
+    -o-animation: hammer 0.2s ease-in-out infinite;
+    animation: hammer 0.2s ease-in-out infinite;
+    animation-play-state: paused;
+}
+
+@keyframes hammer {
+    from {
+    }
+    to {
+        transform-origin: right bottom;
+        transform: rotate(30deg);
+    }
+}

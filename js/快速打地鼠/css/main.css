@@ -1,0 +1,104 @@
+body {
+    position: relative;
+    background: url("../img/background/1.jpg") no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+.interface{
+    position: relative;
+    left: -15px;
+    top: -15px;
+    width: 720px;
+    height: 300px;
+    border: 2px solid #ecb345;
+    border-radius: 20px;
+    background-color: #976709;
+    font-size: 25px;
+    letter-spacing: 2px;
+    font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif;
+    font-weight: bold;
+    text-shadow: rgb(23, 21, 22) 3px 3px 1px;
+    color: rgb(238, 238, 238);
+    user-select: none;
+    display: none;
+}
+.interface .close{
+    width: 66px;
+    height: 56px;
+    position: absolute;
+    right: -65px;
+    top: 0;
+    cursor: pointer;
+}
+.top {
+    position: relative;
+    width: 600px;
+    margin: 100px auto;
+    height: 50px;
+}
+
+.top .explain {
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    -webkit-animation: explain 1s linear infinite;
+    -o-animation: explain 1s linear infinite;
+    animation: explain 1s linear infinite;
+}
+
+.star {
+    width: 150px;
+    height: 128px;
+    margin: 260px auto 0;
+    cursor: pointer;
+    background: url(../img/start.png) no-repeat;
+    background-size: 100%;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -ms-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    -webkit-animation: star 1s ease-in-out infinite alternate;
+    /*-o-animation: star 1s ease-in-out infinite alternate;*/
+    /*animation: star 1s ease-in-out infinite alternate;*/
+}
+.close{
+    width: 170px;
+    height: 65px;
+    margin: 0 auto;
+    background: url(../img/icon.png) no-repeat;
+    background-position: -20px -835px;
+    transition: 0.3s ease-in-out;
+}
+.close a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.close:hover {
+    transform: scale(1.1);
+}
+@keyframes star {
+    from{
+        opacity: 0.2;
+    } to{
+        opacity: 0.8;
+    }
+}
+
+.star:hover {
+    transform: scale(1.1);
+}
+
+@keyframes explain {
+    0% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}

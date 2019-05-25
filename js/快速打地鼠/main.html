@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>快速打地鼠</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<audio class="audio">
+    <source src="audio/click.mp3" type="audio/mpeg"/>
+</audio>
+<audio class="audio" autoplay="autoplay" loop="loop">
+    <source src="audio/game_music.ogg" type="audio/ogg"/>
+</audio>
+<div class="top">
+    <div class="explain">
+        <img src="img/!.png" height="40" width="40"/>
+    </div>
+    <div class="interface">
+        <div class="close"><img src="img/close.png" height="56" width="66"/></div>
+        打地鼠游戏规则介绍:
+            本款游戏分28个关卡，随着关卡增加难度也增加。在规定时间内每关打中地鼠则加120分，漏掉则倒扣60分。
+        每次记录最高分。
+    </div>
+</div>
+<div class="star"></div>
+<!-- <div class="close"><a href="javascript:window.opener=null;window.open('','_self');window.close();"></a></div> -->
+<div class="close"><a href="javascript:window.opener=null;window.close();"></a></div>
+<script>
+    document.getElementsByClassName("explain")[0].onclick = function () {
+        document.getElementsByClassName("audio")[0].play();
+        setTimeout(function () {
+            document.getElementsByClassName("interface")[0].style.display = "block";
+            document.getElementsByClassName("star")[0].style.display="none";
+        },500);
+    };
+    document.getElementsByClassName("close")[0].onclick = function () {
+        document.getElementsByClassName("audio")[0].play();
+        setTimeout(function () {
+            document.getElementsByClassName("interface")[0].style.display = "none";
+            document.getElementsByClassName("star")[0].style.display="block";
+        },500);
+
+    };
+    document.getElementsByClassName("star")[0].onclick = function () {
+        document.getElementsByClassName("audio")[0].play();
+        setTimeout(function () {
+            window.open("checkpoint.html", "_parent");
+        }, 500);
+    }
+</script>
+</body>
+</html>
