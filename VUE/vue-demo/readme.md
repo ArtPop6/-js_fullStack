@@ -16,3 +16,5 @@ index.html 浏览器打开的，使用vue模板生成index.html
 npm 是在node—module里 引入
 v-modal双向数据绑定数据源 会同步 bindinput  vue里v-modal
 scoped其他页面引用不了
+
+npm install webpack-dev-server --save-dev
