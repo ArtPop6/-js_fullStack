@@ -25,7 +25,7 @@ const posts = [
     }, 
     {
         id: 1,
-        content: 'react 表示不服'
+        content: '<strong>react 表示不服</strong>'
     }
 ]
 app.use(async (ctx) => {

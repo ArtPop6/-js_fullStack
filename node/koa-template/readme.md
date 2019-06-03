@@ -21,3 +21,10 @@ not fuound
 
 
  npm i ejs koa-views -S 编译html  koa支持各种模板引擎(模板与数据分离)
+
+## ejs
+<%= %>输出数据到模板 (转义过后的)
+<%- %>也是输出数据到模板(未转义过后的)解析html
+include 引入其他模板
+
+转义
