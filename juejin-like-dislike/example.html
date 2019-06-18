@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" class="">
+</head>
+
+<body>
+    <div class="container">
+        <div class="item" data-flag="0">
+            <img src="https://b-gold-cdn.xitu.io/v3/static/img/zan.e9d7698.svg" alt="" class="icon">
+            <span class="count">99</span>
+        </div>
+        <div class="item" data-flag="0">
+            <img src="https://b-gold-cdn.xitu.io/v3/static/img/zan.e9d7698.svg" alt="" class="icon">
+            <span class="count">99</span>
+        </div>
+        <div class="item" data-flag="0">
+            <img src="https://b-gold-cdn.xitu.io/v3/static/img/zan.e9d7698.svg" alt="" class="icon">
+            <span class="count">99</span>
+        </div>
+    </div>
+    <script>
+        
+        const like = 'https://b-gold-cdn.xitu.io/v3/static/img/zan-active.930baa2.svg';
+        const disLike = 'https://b-gold-cdn.xitu.io/v3/static/img/zan.e9d7698.svg';
+        const container = document.querySelector('.container');
+        const items = document.querySelectorAll('.item');
+        // version2
+        for (let i = 0; i < items.length; i++) {
+            // let flag = false;
+            items[i].addEventListener('click', function () {
+                const img = items[i].querySelector('img');
+                const count = items[i].querySelector('.count');
+                let countNumber = count.innerHTML;
+                // 转换为数字
+                countNumber = parseInt(countNumber);
+                // 用data后的变量
+                let flag = items[i].dataset.flag;
+                // 点赞
+                if (flag === '0') {
+                    countNumber += 1;
+                    count.classList.add('active');
+                    img.src = like;
+                    flag = '1';
+                } else {
+                    countNumber -= 1;
+                    count.classList.remove('active');
+                    img.src = disLike;
+                    flag = '0';
+                }
+                // flag = !flag;
+                items[i].dataset.flag = flag;
+
+                count.innerHTML = countNumber;
+            })
+        }
+    </script>
+</body>
+
+</html>

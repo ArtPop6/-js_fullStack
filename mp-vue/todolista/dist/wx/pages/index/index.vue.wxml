@@ -1,0 +1,16 @@
+<template name="80205232">
+  <view class="_div data-v-2c014a22">
+    <swiper indicator-dots="{{false}}" autoplay="{{true}}" interval="{{5000}}" duration="{{1000}}" class="_swiper data-v-2c014a22">
+      <block wx:key="i" key="{{i}}" wx:for="{{imgUrls}}" wx:for-index="i" wx:for-item="img">
+        <swiper-item class="_swiper-item data-v-2c014a22">
+          <image src="{{img}}" class="_image data-v-2c014a22 slide-image" width="355" height="150"></image>
+        </swiper-item>
+      </block>
+    </swiper> <input type="text" value="{{mytodo}}" bindinput="handleProxy" placeholder="please input" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_input data-v-2c014a22" /> <button bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_button data-v-2c014a22">添加一条</button> <button bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}" class="_button data-v-2c014a22">清除</button>
+    <view class="_ul data-v-2c014a22 todos">
+      <view wx:key="i" key="{{i}}" bindtap="handleProxy" data-eventid="{{'3_'+i}}" data-comkey="{{$k}}" wx:for="{{todos}}" wx:for-index="i" wx:for-item="todo" class="_li data-v-2c014a22 {{[todo.done ? 'done' : '']}}">
+        {{ todo.text }}
+      </view>
+    </view>
+  </view>
+</template>

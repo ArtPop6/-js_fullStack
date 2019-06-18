@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=mFUG0nwCMZTB5f2HoVl5IDcsVNPd12x6"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        <button onclick="getaddress()">我在哪</button>
+    </p>
+    <div id="out"></div>
+</body>
+<script>
+    var latitude
+    var longitude
+    function getaddress() {
+        var out = document.getElementById('out');
+        // 不支持这个Api时 return后面代码不执行
+        if (!navigator.geolocation) {
+            out.innerHTML = '您的浏览器不支持获取地理位置'
+            return;
+        }
+        function success(position) {
+            latitude = position.coords.latitude
+            longitude = position.coords.longitude
+            var myGeo = new BMap.Geocoder()
+            myGeo.getLocation(new BMap.Point(latitude, longitude), function (result) {
+                if (result) {
+                    alert(result.address);
+                }
+            });
+            out.innerHTML = '<p>您的纬度' + latitude + '</br>您的经度' + longitude + '</p>'
+        }
+        function error() {
+            out.innerHTML = '无法获取您的当前位置'
+        }
+        out.innerHTML = '<p>loading...</p>'
+        navigator.geolocation.getCurrentPosition(success, error)
+
+    }
+</script>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 父类 构造函数 name属性
+    function Animal(age) {
+        console.log(arguments, '+++');
+        this.species = '动物';
+        this.age = age;
+    }
+    // 实现继承,cat原型指向annimal实例
+    function Cat(age, name, color) {
+        // 参数数组
+        // console.log(arguments);
+        // 指向cat运行时的this apply 实现接受数组
+        // Animal.apply(this, arguments);
+        // call 用...
+        // Anima.call(this, ...arguments);或
+        Animal.call(this, age, name, color);
+        this.name = name;
+        this.color = color;
+    }
+    var cat1 = new Cat(3, '加菲猫', 'yellow');
+    console.log(cat1);
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.weui-cell {
+    display: flex;
+    
+}
+.weui-cell .weui-cell_name {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 60px;
+}
+.name {
+    margin-bottom: 10px;
+}
+.weui-cell.name input[type=text] {
+    width: 135px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.weui-cell input[type=text] {
+    width: 135px;
+    margin-right: 10px;
+}
+.tele {
+    margin-bottom: 10px;
+}
+.weui-cell .weui-cell_qq {
+    width: 60px;
+    margin-left: 10px;
+}
+.qq {
+    margin-bottom: 10px;
+}
+.weui-cell .weui-cell_tele {
+    width: 60px;
+    margin-left: 10px;
+}
+.weui-cell .weui-cell_date {
+    width: 60px;
+    margin-left: 10px;
+}
+.date {
+    margin-bottom: 10px;
+}
+.weui-button {
+    margin-left: 60px;
+    line-height: 1.5;
+}
+.btn {
+    margin-left: 60px;
+    width: 60px;
+    height: 20px;
+    display: block;
+    text-align: center;
+    border: 1px solid #e5e5e5;
+    line-height: 1.5;
+    color: #323232;
+    border-radius: 24px;
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding-top: 30px;
+            font: 12px Helvetica, Arial, sans-serif;
+            line-height: 1.62;
+        }
+
+        #anony-nav {
+            width: 950px;
+            margin: 0 auto -25px;
+        }
+
+        .anony-nav-links {
+            float: right;
+            margin-top: 6px;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        .anony-nav-links ul li {
+            display: inline-block;
+            zoom: 1;
+            margin: 0 0 0 17px;
+        }
+
+        .anony-nav-links li a {
+            display: inline-block;
+            zoom: 1;
+            width: 40px;
+            height: 20px;
+            overflow: hidden;
+            margin: 0;
+            line-height: 20em;
+            outline: none;
+            vertical-align: middle;
+            background: transparent url(./images/download1.png) no-repeat 100% 100%;
+        }
+
+        a:visited {
+            color: #666699;
+            text-decoration: none;
+        }
+
+        a:link {
+            text-decoration: none;
+            color: #3377aa;
+        }
+
+        a {
+            cursor: pointer;
+        }
+
+        .anony-nav-links li .link-book {
+            background-position: 0 0;
+        }
+
+        .anony-nav-links li .link-movie {
+            background-position: -60px 0;
+        }
+
+        .anony-nav-links li .link-music {
+            background-position: -120px 0;
+
+        }
+
+        .anony-nav-links li .link-group {
+            background-position: -180px 0;
+
+        }
+
+        .anony-nav-links li .link-events {
+            background-position: -299px 0;
+        }
+
+        .anony-nav-links li .link-fm {
+            background-position: -241px 0;
+
+        }
+
+        .anony-nav-links li .link-shijian {
+            margin-bottom: 1px;
+            background: transparent url(https://img3.doubanio.com/f/sns/b474dd402e4293943146a4789de3dae88ec96636/pics/sns/anony_home/ic_shijian_home_nav.png) no-repeat 100% 100%;
+            background-image: -webkit-image-set(url(https://img3.doubanio.com/f/sns/b474dd402e4293943146a4789de3dae88ec96636/pics/sns/anony_home/ic_shijian_home_nav.png) 1x, url(/f/sns/74745beec69da53ac959a9bcc4e1e66f852ba2e8/pics/sns/anony_home/ic_shijian_home_nav@2x.png) 2x);
+            background-size: cover;
+
+
+        }
+
+        .anony-nav-links li .link-market {
+            background-position: -421px 0;
+        }
+
+        #anony-nav h1 {
+            word-wrap: break-word;
+            line-height: 1.1;
+            color: #494949;
+            display: inline-block;
+            zoom: 1;
+            vertical-align: middle;
+            width: 160px;
+            height: 34px;
+            margin: 0 20px 0 0;
+            padding: 0;
+            font-size: 12px;
+            font-weight: normal;
+            background: url(https://img3.doubanio.com/f/sns/19886d443852bee48de2ed91f4a3bdfdaf8c809c/pics/nav/logo_db.png) no-repeat 0 0;
+            background-image: -webkit-image-set(url(https://img3.doubanio.com/f/sns/19886d443852bee48de2ed91f4a3bdfdaf8c809c/pics/nav/logo_db.png) 1x, url(https://img3.doubanio.com/f/sns/0f9e2dbca60b52f595ddbc02073cb4bb879ed1c9/pics/nav/logo_db@2x.png) 2x);
+            overflow: hidden;
+        }
+
+
+        #anony-nav .anony-srh {
+            position: relative;
+            display: inline-block;
+            zoom: 1;
+            vertical-align: middle;
+            width: 270px;
+            height: 30px;
+            border: 1px solid #c3c3c3;
+        }
+
+        #anony-nav .anony-srh form {
+            margin: 0;
+            padding: 0;
+            bottom: 0;
+            /* display: block; */
+        }
+
+        #anony-nav .anony-srh .inp {
+            display: block;
+            height: 30px;
+            overflow: hidden;
+        }
+
+        #anony-nav .anony-srh .inp input {
+            width: 240px;
+            border: none;
+            font-size: 43px;
+            height: 20px;
+            padding: 5px;
+            margin-right: 3px;
+            vertical-align: middle;
+            font-family: inherit;
+            font-style: inherit;
+            font-weight: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="anony-nav">
+        <div class="anony-nav-links">
+            <ul>
+                <li><a href="#" class="link-book">豆瓣读书</a></li>
+                <li><a href="#" class="link-movie">豆瓣电影</a></li>
+                <li><a href="#" class="link-music">豆瓣音乐</a></li>
+                <li><a href="#" class="link-group">豆瓣小组</a></li>
+                <li><a href="#" class="link-events">豆瓣同城</a></li>
+                <li><a href="#" class="link-fm">豆瓣FM</a></li>
+                <li><a href="#" class="link-shijian">豆瓣时间</a></li>
+                <li><a href="#" class="link-market">豆瓣豆品</a></li>
+            </ul>
+        </div>
+        <h1><a href="#">豆瓣</a></h1>
+        <div class="anony-srh"></div>
+        <form action="https://www.douban.com" method="get">
+            <span class="inp">
+                <input type="text" maxlength="60" size="12" placeholder="书籍,电影,音乐,小组,小站，成员" name="q" autocomplete="off">
+            </span>
+            <span class="btn"><input type="submit" value="搜索"></span>
+        </form>
+    </div>
+</body>
+
+</html>
