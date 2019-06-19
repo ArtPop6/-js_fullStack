@@ -1,5 +1,6 @@
 let Toast = {}
 // 第一个参数vue实例
+// 定义toast组件
 Toast.install = function (Vue, options) {
     let opt = {
         defaultType: 'center', // ‘网络异常’默认显示的位置
@@ -36,4 +37,30 @@ Toast.install = function (Vue, options) {
             return vue.prototype.$toast(tips, type)
         }
     })
+}
+
+let Loading = {}
+Loading.install = function (Vue) {
+    let tpl
+    Vue.prototype.$showLoading = () => {
+        if (document.getElementsByClassName('vue-loading').length) {
+            return 
+        } 
+        let loadingTpl = Vue.extend({ //创建构造器， 定义好提示信息的模板
+            template: '<div calss="vue-loading"></div>'
+        })
+        tpl = new loadingTpl().$mount.$el 
+        document.body.appendChild(tpl)
+    }
+    Vue.prototype.$hideLoading = () => {
+        if (document.getElementsByClassName('vue-loading').length) {
+            document.body.removeChild(tpl)
+        }
+    }
+}
+
+// 定义好的组件 放出来
+export {
+    Toast,
+    Loading
 }

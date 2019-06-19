@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import axios from 'axios'
+// 不import就用vue.$toast
 const vue = new Vue()  // vue的实例，具有vue本身所有属性
 
 // axios配置 请求时间，axios请求数据超过十秒就报错
@@ -12,7 +13,7 @@ axios.defaults.baseURL = 'http://localhost:3000'
 axios.interceptors.response.use((res) => {
     if (res.data.code !==200) {
         // $toast不是vue api 在某处挂载在vue原型链上 
-        // 为什么不能直接this.$toast  this指向vue实例。因为this作用域不再这个对象里面
+        // 为什么不能直接this.$toast  this指向vue实例。因为this作用域不再这个对象里面,不穿第二个参数默认center
         vue.$toast('网络异常')
         // 转转隐藏掉
         vue.$hideLoading()
