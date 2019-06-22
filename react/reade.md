@@ -56,3 +56,14 @@ state = {
     toggle: this.handleToggletheme
 }
 静态属性 无法获取 实例的 this
+
+/post/abcdefg
+
+?type=all&a=1
+页面去另一个页面。search，或match方式传数据
+定义组件 function或class管理组件状态state
+
+## function && class 
+function component (dumb component) 哑巴 只做一件事: 根据 （父组件）props 渲染， 不会依赖任何东西 性能好
+
+class component( smart component) 负责状态管理  复杂，依赖于其他组件
