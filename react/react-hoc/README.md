@@ -12,3 +12,13 @@ high order component
 
 ## @
 ES7 里面的 装饰器 decorator
+
+yarn eject 改下babel配置
+cnpm i @babel/plugin-proposal-decorators -D
+"plugins": [
+    ["@babel/plugin-proposal-decorators", { "legacy" : true }]
+  ]
+
+cnpm i
+
+

@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import withLogin from './WithLogin';
+
+@withLogin
 class ShopCart extends Component {
     render() {
         const { a, b } = this.props;
