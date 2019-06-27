@@ -11,3 +11,5 @@ ES7 里面的 装饰器 decorator
 
  cnpm i mobx mobx-react -S 数据和mobx连起来
  状态划分越小越好，集中管理
+
+## 装饰者模式
