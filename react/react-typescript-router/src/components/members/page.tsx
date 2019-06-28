@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { memberAPI } from '../../api/member';
 import { MemberEntity} from '../../model';
+import { MemberHeader } from './memberHeader';
+import { MemberRow } from './memberRow';
 
 // export const MembersPage: React.StatelessComponent<{}> = () => {
 //     return (
@@ -41,10 +43,13 @@ export class MembersPage extends React.Component<Props, State> {
         return (
             <div>
                 <table className="table">
-                    <thead></thead>
+                    <MemberHeader />
                     <tbody>
                         {
-                            this.state.members.map(MemberRow)
+                            // this.state.members.map(MemberRow)
+                            this.state.members.map((member) => 
+                                <MemberRow key={member.id} member={member} />
+                            )
                         }
                     </tbody>
                 </table>
@@ -53,14 +58,14 @@ export class MembersPage extends React.Component<Props, State> {
     }
 }
 
-const MemberRow = (member: MemberEntity) => {
-    return (
-        <tr key={member.id}>
-            <td>
-                <img src={member.avatar_url} alt="" className="avatar"/>
-            </td>
-            <td><span>{member.id}</span></td>
-            <td><span>{member.login}</span></td>
-        </tr>
-    )
-}
+// const MemberRow = (member: MemberEntity) => {
+//     return (
+//         <tr key={member.id}>
+//             <td>
+//                 <img src={member.avatar_url} alt="" className="avatar"/>
+//             </td>
+//             <td><span>{member.id}</span></td>
+//             <td><span>{member.login}</span></td>
+//         </tr>
+//     )
+// }

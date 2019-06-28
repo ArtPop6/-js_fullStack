@@ -9,4 +9,3 @@ yarn add html-webpack-plugin mini-css-extract-plugin -D
 <!-- 单独路口，文件 vendor-->
 yarn add bootstrap
 "test": "echo \"Error: no test specified\" && exit 1",
---mode devlopment --inline --hot --open
