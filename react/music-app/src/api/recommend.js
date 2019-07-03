@@ -1,4 +1,4 @@
-// 所有recommend请求都放在这
+// 所有recommend请求方法 都放在这  组件re。jsx
 import jsonp from './jsonp';
 import { URL, PARAM, OPTION } from './config'
 
@@ -15,5 +15,24 @@ export function getCarousel() {
             needNewCode: 1,
         },
         OPTION
+    )
+}
+
+export function getNewAlbum() {
+    return jsonp(
+        URL.newalbum,
+    {
+      ...PARAM,
+      g_tk: 5381,
+      hostUin: 0,
+      platform: 'yqq',
+      needNewCode: 0,
+      data: `{"albumlib":{"method":"get_album_by_tags","param":{"area":1,"company":-1,"genre":-1,"type":-1,"year":-1,"sort":2,"get_tags":1,"sin":0,"num":50,"click_albumid":0},"module":"music.web_album_library"}}`
+    },
+        // 配置回调方法
+    {
+        param: 'callback',
+        prefix: 'callback'
+    }
     )
 }
