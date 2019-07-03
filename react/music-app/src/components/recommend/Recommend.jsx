@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
 // 组件swiper
 import Swiper from 'swiper';
+import Lazyload, { forceCheck } from 'react-lazyload';
 // 方法都在这
 import { getCarousel, getNewAlbum } from '../../api/recommend';
 import { CODE_SUCCESS } from '../../api/config';
+import { createAlbumByItem } from '../../model/album';
 import 'swiper/dist/css/swiper.css';
 import './recommend.styl';
+import Scroll from '../../common/scroll/Scroll';
+import Loading from '../../common/loading/Loading';
+
 class Recommend extends Component {
   state = {
+    show: true,
     slideList: [],
-    albumList: []
+    albumList: [],
+    refreshScroll: false
   }
   componentDidMount() {
       getCarousel().then(res => {
@@ -34,21 +41,37 @@ class Recommend extends Component {
         let albumList = res.albumlib.data.list;
         console.log('albumList', albumList);
         this.setState({
-          albumList
+          albumList,
+          show: false
+        }, () => {
+          //刷新scroll
+          this.setState({
+            refreshScroll: true
+          })
         })
       })
   }
   renderAlbum() {
     const { albumList = [] } = this.state;
     return albumList.map(item => {
+      // 渲染 album
+      const album = createAlbumByItem(item);
       return (
-        <div className="album-wrapper" key={item.album_mid}>
+        <div className="album-wrapper" key={album.mId}>
           <div className="left">
-            <img src={item.img} alt=""/>
+            <Lazyload>
+              <img src={album.img} width="100%" height="100%" alt=""/>
+            </Lazyload>
           </div>
           <div className="right">
             <div className="album-name">
-              { item.album_name }
+              { album.name }
+            </div>
+            <div className="singer-name">
+              { album.singer }
+            </div>
+            <div className="public-time">
+              { album.publicTime }
             </div>
           </div>
         </div>
@@ -72,8 +95,11 @@ class Recommend extends Component {
     )
   }
   render() { 
+    const { refreshScroll } = this.state;
     return ( 
       <div className="music-recommend">
+        {/* Scroll会对第一个子元素做处理 */}
+        <Scroll refresh={ refreshScroll } onScroll={forceCheck}>
         <div>
           <div className="slider-container">
             <div className="swiper-wrapper">
@@ -88,6 +114,8 @@ class Recommend extends Component {
             </div>
           </div>
         </div>
+        </Scroll>
+        <Loading title="正在加载中..." show={this.state.show} />
       </div>
      );
   }

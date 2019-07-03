@@ -20,7 +20,7 @@ export function getCarousel() {
 
 export function getNewAlbum() {
     return jsonp(
-        URL.newalbum,
+    URL.newalbum,
     {
       ...PARAM,
       g_tk: 5381,
