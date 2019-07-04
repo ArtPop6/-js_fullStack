@@ -1,4 +1,4 @@
-// 所有recommend请求方法 都放在这  组件re。jsx
+// 所有recommend请求方法 都放在这集中管理  组件re。jsx
 import jsonp from './jsonp';
 import { URL, PARAM, OPTION } from './config'
 
@@ -34,5 +34,21 @@ export function getNewAlbum() {
         param: 'callback',
         prefix: 'callback'
     }
+    )
+}
+export function getAlbumInfo(mid) {
+    return jsonp(
+        URL.albumInfo,
+        {
+            ...PARAM,
+            albummid: mid,
+            g_tk: 5381,
+            loginUin: 0,
+            hostUin: 0,
+            platform: 'yqq.json',
+            needNewCode: 0
+        },
+        // jsonp最重要参数option
+        OPTION
     )
 }

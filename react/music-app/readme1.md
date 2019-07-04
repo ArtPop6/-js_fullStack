@@ -36,3 +36,15 @@ jsonp jquery
 callback_1
 callback_2
 callback_3
+
+ cnpm i better-scroll -S
+ cnpm i react-lazyload -S
+
+## Lazyload 
+监听原生滚动，
+现在是css3 transform滚动，他检测不到
+
+cnpm i redux react-redux -S 把数据和react连起来
+cnpm i react-transition-group -S动画
+
+jsonp 返回
