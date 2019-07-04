@@ -36,7 +36,7 @@ export function getNewAlbum() {
     }
     )
 }
-export function getAlbumInfo(mid) {
+export function getAlbuminfo(mid) {
     return jsonp(
         URL.albumInfo,
         {

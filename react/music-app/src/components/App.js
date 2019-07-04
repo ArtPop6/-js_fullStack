@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect, NavLink } from 'react
 import Recommend from './recommend/Recommend';
 import Ranking from './ranking/Ranking';
 import Search from './search/Search';
+import Player from '../containers/Player';
 import '../assets/stylus/reset.styl';
 import '../assets/stylus/font.styl';
 import './App.styl';
@@ -36,7 +37,8 @@ function App() {
             <Route path="/" component={Recommend} />
             {/* <Redirect from="/" to="/recommend" /> */}
           </Switch>
-        </div> 
+        </div>
+        <Player /> 
       </div>
     </Router>
   );
