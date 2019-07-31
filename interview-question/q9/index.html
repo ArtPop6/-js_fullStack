@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" id="txt">
+        <p id="show-txt"></p>
+    </div>
+    <script>
+        // 全局对象
+        var obj = {}
+        // 新增属性返回原有对象，监测obj，变化了就会执行dp方法 数据驱动
+        Object.defineProperty(obj, 'txt', {
+            get() {
+                return obj
+            },
+            set(newValue) {
+                newValue = document.getElementById('txt').value;
+                document.getElementById('show-txt').innerHTML = newValue || ''
+            }
+        })
+        document.addEventListener('keyup', function(e) {
+            // e.target框  value表示内容
+            console.log(e.target.value);
+            // keyup只是给obj新增属性
+            obj.txt = e.target.value;
+            // 通过事件驱动不是mvvm思想，与原声js无区别，应该通过数据驱动，并不是双向绑定
+            // document.getElementById('show-txt').innerHTML = obj.txt || '';
+        })
+        // 事物驱动这个代码的实行
+        
+
+    </script>
+</body>
+</html>
