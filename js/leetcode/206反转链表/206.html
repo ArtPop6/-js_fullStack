@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var listNode = {
+            val: 1,
+            next: {
+                val: 2,
+                next: {
+                    val: 3,
+                    next: null
+                }
+            }
+        }
+        var reverseList = function(head) {
+            // head 头节点 
+            var cur = head, 
+                pre = null;
+                while (cur) {
+                    var t = cur.next;
+                    cur.next = pre;
+                    pre = cur;
+                    // cur.next = null
+                    cur = t;
+                }
+                return pre;
+        }
+        console.log(reverseList(listNode));
+    </script>
+</body>
+</html>
