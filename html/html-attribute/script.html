@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 没有加标签的话，js与html解析互斥， -->
+    <script defer></script>
+    <div></div>
+    <script defer></script>
+    <div></div>
+    <script>
+            window.onerror = function(...args) {
+                console.log('出错了', args);
+            }
+        </script>
+    <!-- crossorigin拿掉window.onerror就没用了 -->
+    <script src="http://localhost:9999/a.js" crossorigin="anonymous"></script>
+    <!-- 监控平台 有无报错-->
+    
+
+</body>
+</html>
