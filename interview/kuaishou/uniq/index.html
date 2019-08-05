@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var array = [1, 1, '1', '1'];
+    // set indexof
+    function unique(array) {
+        var res = [];
+        for (let i = 0, arrayLen = array.length; i < arrayLen; i++) {
+            // for (let j = 0, resLen = res.length; j < resLen; j++) {
+            //     if (array[i] === res[j]) {
+            //         break;
+            //     }
+            // }
+            // if (j === resLen) {
+            //     res.push(array[i]);
+            // }
+            var current = array[i];
+            if (res.indexOf(current) === -1) {
+                res.push(current);
+            }
+        }
+        return res;
+    }
+    console.log(unique(array));
+    </script>
+</body>
+</html>
