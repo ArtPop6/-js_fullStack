@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    /* 加上button权重更大 */
+    .btn {
+        color: blue;
+    }
+    .red {
+        color: red;
+    }
+    
+    </style>
+</head>
+<body>
+    <!-- <style>
+        .blue {
+            color: black;
+        }
+        .green {
+            color: green;
+        }
+    </style>
+    <span class="green blue">123</span>
+    span标签是绿色的，同等优先级，后面的覆盖前面的 -->
+    <!-- 面向过程 -->
+    <button class="btn">btn</button>
+    <script>
+        // es6 class
+        // 面向过程
+        // 面向对象是编程范式
+        var btn = document.querySelector('.btn');
+        btn.addEventListener('click', () => {
+            // 切换颜色 有红色移除，没有红色添加
+            btn.classList.toggle('red');
+        })
+        // es6 class
+        // 只要是这个类构造出来的都有切换颜色这个属性
+        class ToggleColor{
+            constructor(tag, defaultVal) {
+                var ele = document.createElement(tag);
+                var text = document.createTextNode(defaultVal);
+                ele.classList.add('btn');
+                ele.appendChild(text);
+                this.node = ele;
+                this.attachEvent();
+            }
+            attachEvent() {
+                this.node.addEventListener('click', () => {
+                    this.node.classList.toggle('red')
+                })
+            }
+
+        }
+        for (let i =0; i < 10; i ++) {
+            document.body.appendChild(
+                // new 完之后是对象，node才是节点
+                (new ToggleColor('span', 'span ele')).node
+            )
+        }
+        console.log(typeof ToggleColor);
+        // es6 class 背后是 es5 的语法糖
+        function Foo () {}
+        new Foo();
+        // B 有自己的行为，也有切换颜色的行为
+        class B extends ToggleColor {}
+        // es6 class 的继承 使用的是 es5 寄生组合继承
+    </script>
+</body>
+</html>
+<!-- 点击之后来回切换颜色， -->
