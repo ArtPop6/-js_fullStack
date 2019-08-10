@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="items">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <a href="javascript:;" id="addBtn">Add One</a>
+    <script>
+        const items = document.querySelectorAll('.items li');
+        const ul = document.querySelector('.items');
+        // for (let i = 0; i < items.length; i ++) {
+        //     items[i].addEventListener('click', function() {
+        //         // this指向事件发生的原处
+        //         alert(this.innerText);
+        //     })
+        // }
+        // 用冒泡，ul监听  event.target冒泡到ul触发click
+        ul.addEventListener('click', function(event){
+            alert(event.target.innerText)
+        })
+        document.getElementById('addBtn').addEventListener('click', function() {
+            const oLi = document.createElement('li');
+            // 找出子节点中LI节点的数量
+            // 把空文本也变成子节点
+            // 数组中找一部分想要的。filter过滤
+            // ul.childNodes[0].nodeType == 1是标签   ul.childNodes[].nodeType == 1 &&
+            // 伪数组不具有数组api 变成真正的数组[...]
+            oLi.innerText = Array.from(ul.childNodes).filter(item => item.nodeType == 1 && item.tagName === 'LI').length + 1;
+            document.querySelector('.items').appendChild(oLi)
+        })
+    </script>
+</body>
+</html>
