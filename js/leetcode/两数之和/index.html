@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // var twoSum = function(nums, target) {
+    //     for(let i = 0; i < nums.length; i ++) {
+    //         let cur = nums[i];
+    //         for(let j = i + 1; j < nums.length; j ++) {
+    //             if (nums[j] + cur == target) {
+    //                 return [i, j];
+    //             }
+    //         }
+    //     }
+    // }
+    // let arr = [1, 7, 2, 3];
+    // console.log(twoSum(arr, 9));
+    // map数据结构，映射，两个东西一一对应\es5
+    var map = {
+        'lilei': '李雷',
+        'lihua': '李华'
+    }
+    var lileiFun = () => {
+        console.log('吃饭了');
+    }
+    var lihuaFun = () => {
+        console.log('睡觉了');
+    }
+    // map优化 if else
+    // es6 一个数组映射另一个数组
+    var userNameMap = {
+        'lilei': lileiFun,
+        'lihua': lihuaFun
+    }
+    function doSomething(userName) {
+        // if (userName === 'lilei') {
+        //     lileiFun();
+        // } else if (userName === 'lihua') {
+        //     lihuaFun();
+        // }
+        if (userNameMap[userName]) {
+            userNameMap[userName]();
+        }
+    }
+    doSomething('lilei');
+    doSomething('lihua');
+    let map1 = new Map();
+
+    var numsMap = {
+        '2': 0,
+        '7': 1,
+        '11': 2,
+        '5': 3
+    }
+    // var obj = {
+    //     'a': 0,
+    //     'b': 1
+    // }
+    // obj.a.b.c.d
+    // numsMap[14] 判断存不存在就要一步
+    // target 16
+    // for (var i = 0; i < len; i ++)
+    // 2 0  9-2=7  1  [0, 1]
+
+    var set = [...(new Set([1,2,3,4,4]))] // 去重
+    var twoSum = function(nums, target) {
+        // 给所有数建立 map
+        // Set: 无重复的数据集 数组去重
+        var obj = {};
+        // 建立map
+        for (let i = 0; i < nums.length; i++) {
+            // if(numsMap[target - nums[i]]) {
+            //     return [numsMap[target - nums[i]], i]
+            // } 
+            obj[nums[i]] = i;
+        }
+        for (let i = 0; i < nums.length; i ++) {
+            let cur = nums[i];
+            let anotherNum = target - cur;
+            // 说明找到  一步判断就完成 不能用同一个元素
+            if (obj[anotherNum] !== undefined && obj[anotherNum] !== i) {
+                return [i, obj[anotherNum]];
+            }
+        }
+    }
+    // {3: 0, 2: 1, 4: 2}
+    var numsTest = [3, 2, 4];
+    var targetTest = 6;
+    console.log(twoSum(numsTest, targetTest));
+    // var arr = [2, 7, 11, 5];
+    // console.log(twoSum(arr, 16))
+    </script>
+</body>
+</html>
